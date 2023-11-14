@@ -1,19 +1,17 @@
 def p(x):
-    for i in range(2,int(x**0.5)+1):
+    for i in range(2, int(x**0.5)+1):
         if x % i == 0:
             return False
-        
 
 
 x = 100
-a = []
+a = set()
 for i in range(1, int(x**0.5)+1):
     if x % i == 0:
-        a.append(i)
-        if x // i != i:
-            a.append(x//i)
+        a.add(i)
+        a.add(x//i)
 
-a.sort()
-print(a)
+# a.sort()
+print(sorted(a))
 
-print(p(10))
+# print(p(10))
